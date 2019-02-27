@@ -1,0 +1,12 @@
+h2 {
+    color:royalblue;
+}
+
+#tasksPanel {
+    margin-top:50px;
+}
+
+.row-panel-task {
+    padding-left: 10px;
+    padding-right: 10px;
+}
