@@ -1,12 +1,13 @@
-FROM maven:3-jdk-8
+FROM node:alpine
 
-LABEL image-name docker-sfeirschool-trainning
+LABEL image-name docker-sfeirschool-trainning-front
 
-ENV appDir /tasks
+EXPOSE 4200
 
-# Environment variable
-ENV appDir /tasks
+WORKDIR /front
 
-EXPOSE 8080
+COPY . .
 
-ENTRYPOINT mvn springboot:run
+RUN npm install
+
+ENTRYPOINT ["npm", "start"]

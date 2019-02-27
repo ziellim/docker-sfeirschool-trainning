@@ -1,0 +1,20 @@
+version: '3.3'
+
+networks:
+  web_net:
+
+services:
+  back:
+    build: ./back
+    image: docker-sfeir-school-trainning-back:1.0
+    networks:
+      - web_net
+  front:
+    build: ./front
+    ports:
+      - "8080:4200"
+    image: docker-sfeir-school-trainning-front:1.0
+    depends_on:
+      - back
+    networks:
+      - web_net
